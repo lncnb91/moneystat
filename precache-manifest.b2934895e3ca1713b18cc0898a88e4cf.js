@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/moneystat/static/media/logo.5d5d9eef.svg"
   },
   {
-    "revision": "a257300a8f4cd630dfab470e9adea2ae",
+    "revision": "1a753cf2c17ddd628014ba12225619c8",
     "url": "/moneystat/index.html"
   }
 ];
