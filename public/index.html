@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="./bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="./bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="./bower_components/select2/dist/css/select2.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="./dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -27,6 +29,7 @@
   <link rel="stylesheet" href="./bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="./bower_components/bootstrap-daterangepicker/daterangepicker.css">
+
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="./plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
@@ -709,7 +712,7 @@
           <!-- /.table -->
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Responsive Hover Table</h3>
+              <h3 class="box-title">Spent expenses</h3>
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -725,115 +728,148 @@
             <div class="box-body table-responsive table-bordered">
               <table class="table table-hover table-bordered">
                 <tr>
-                  <th>ID</th>
                   <th>User</th>
                   <th>Date</th>
-                  <th>Status</th>
-                  <th>Reason</th>
+                  <th>Category</th>
+                  <th>Amount</th>
+                  <th>Description</th>
                 </tr>
                 <tr>
-                  <td>183</td>
-                  <td>John Doe</td>
-                  <td>11-7-2014</td>
-                  <td><span class="label label-success">Approved</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  <td>Ngọc Cường</td>
+                  <td>20-2-2019</td>
+                  <td>Food & Drink</td>
+                  <td>30.000<sup>đ</sup></td>
+                  <td>Ăn bún bò giò ốc tại Keang Nam</td>
                 </tr>
                 <tr>
-                  <td>219</td>
-                  <td>Alexander Pierce</td>
-                  <td>11-7-2014</td>
-                  <td><span class="label label-warning">Pending</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  <td>Thu Hường</td>
+                  <td>20-2-2019</td>
+                  <td>Insurances</td>
+                  <td>2.000.000<sup>đ</sup></td>
+                  <td>Đóng bảo hiểm tháng 2 cho Hường và Cún</td>
                 </tr>
                 <tr>
-                  <td>657</td>
-                  <td>Bob Doe</td>
-                  <td>11-7-2014</td>
-                  <td><span class="label label-primary">Approved</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  <td>Ngọc Cường</td>
+                  <td>20-2-2019</td>
+                  <td>Family</td>
+                  <td>299.000<sup>đ</sup></td>
+                  <td>Mua quà đầy 2 tháng tuổi cho cò</td>
                 </tr>
                 <tr>
-                  <td>175</td>
-                  <td>Mike Doe</td>
-                  <td>11-7-2014</td>
-                  <td><span class="label label-danger">Denied</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  <td>Thu Hường</td>
+                  <td>19-1-2019</td>
+                  <td>Family</td>
+                  <td>20.000.000<sup>đ</sup></td>
+                  <td>Tặng bố chồng 20 củ tiêu tết</td>
                 </tr>
               </table>
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix no-border">
-              <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
+              <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#modal-default"><i class="fa fa-plus"></i>
+                Add item
+              </button>
             </div>
+
+            <div class="modal fade" id="modal-default">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Add expense</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="box-body">
+                      <!-- User -->
+                      <div class="form-group">
+                        <label>User:</label>
+
+                        <div class="input-group">
+                          <span class="input-group-addon"><i class="fa fa-user" style="width: 15px;"></i></span>
+                          <select class="form-control select2" style="width: 100%;">
+                            <option selected="selected">Ngọc Cường</option>
+                            <option>Thu Hường</option>
+                          </select>
+                        </div>
+                        <!-- /.input group -->
+                      </div>
+                      <!-- /.form group -->
+
+                      <!-- Category -->
+                      <div class="form-group">
+                        <label>Category:</label>
+
+                        <div class="input-group">
+                          <span class="input-group-addon"><i class="fa fa-folder-open-o" style="width: 15px;"></i></span>
+                          <select class="form-control select2" style="width: 100%;">
+                            <option selected="selected">Food & Drink</option>
+                            <option>Bills & Utilities</option>
+                            <option>Transportation</option>
+                            <option>Shopping</option>
+                            <option>Entertainment</option>
+                            <option>Travel</option>
+                            <option>Health & Fitness</option>
+                            <option>Family</option>
+                            <option>Education</option>
+                            <option>Investment</option>
+                            <option>Insurances</option>
+                            <option>Other</option>
+                          </select>
+                        </div>
+                        <!-- /.input group -->
+                      </div>
+                      <!-- /.form group -->
+
+                      <!-- Description -->
+                      <div class="form-group">
+                        <label>Description:</label>
+
+                        <div class="input-group">
+                          <span class="input-group-addon"><i class="fa fa-pencil-square-o" style="width: 15px;"></i></span>
+                          <input type="text" class="form-control">
+                        </div>
+                        <!-- /.input group -->
+                      </div>
+                      <!-- /.form group -->
+
+                      <!-- Date -->
+                      <div class="form-group">
+                        <label>Date:</label>
+
+                        <div class="input-group date">
+                          <span class="input-group-addon"><i class="fa fa-calendar" style="width: 15px;"></i></span>
+                          <input type="text" class="form-control pull-right" id="datepicker">
+                        </div>
+                        <!-- /.input group -->
+                      </div>
+                      <!-- /.form group -->
+
+                      <!-- Money amount -->
+                      <div class="form-group">
+                        <label>Money amount:</label>
+
+                        <div class="input-group">
+                          <span class="input-group-addon"><i class="fa fa-dollar" style="width: 15px;"></i></span>
+                          <input type="text" class="form-control">
+                        </div>
+                        <!-- /.input group -->
+                      </div>
+                      <!-- /.form group -->
+                    </div>
+                    <!-- /.box-body -->
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                  </div>
+                </div>
+                <!-- /.modal-content -->
+              </div>
+              <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
           </div>
-
-          <!-- form -->
-          <div class="box box-primary">
-            <div class="box-header">
-              <h3 class="box-title">Date picker</h3>
-            </div>
-            <div class="box-body">
-              <!-- Date -->
-              <div class="form-group">
-                <label>Date:</label>
-
-                <div class="input-group date">
-                  <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                  </div>
-                  <input type="text" class="form-control pull-right" id="datepicker">
-                </div>
-                <!-- /.input group -->
-              </div>
-              <!-- /.form group -->
-
-              <!-- Date range -->
-              <div class="form-group">
-                <label>Date range:</label>
-
-                <div class="input-group">
-                  <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                  </div>
-                  <input type="text" class="form-control pull-right" id="reservation">
-                </div>
-                <!-- /.input group -->
-              </div>
-              <!-- /.form group -->
-
-              <!-- Date and time range -->
-              <div class="form-group">
-                <label>Date and time range:</label>
-
-                <div class="input-group">
-                  <div class="input-group-addon">
-                    <i class="fa fa-clock-o"></i>
-                  </div>
-                  <input type="text" class="form-control pull-right" id="reservationtime">
-                </div>
-                <!-- /.input group -->
-              </div>
-              <!-- /.form group -->
-
-              <!-- Date and time range -->
-              <div class="form-group">
-                <label>Date range button:</label>
-
-                <div class="input-group">
-                  <button type="button" class="btn btn-default pull-right" id="daterange-btn">
-                    <span>
-                      <i class="fa fa-calendar"></i> Date range picker
-                    </span>
-                    <i class="fa fa-caret-down"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.form group -->
-
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
         </section>
         <!-- /.Left col -->
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
@@ -908,7 +944,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2019 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
     reserved.
   </footer>
 
@@ -1118,6 +1154,8 @@
 </script>
 <!-- Bootstrap 3.3.7 -->
 <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Select2 -->
+<script src="./bower_components/select2/dist/js/select2.full.min.js"></script>
 <!-- Morris.js charts -->
 <script src="./bower_components/raphael/raphael.min.js"></script>
 <script src="./bower_components/morris.js/morris.min.js"></script>
@@ -1145,5 +1183,16 @@
 <script src="./dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="./dist/js/demo.js"></script>
+<script>
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+    //Date picker
+    $('#datepicker').datepicker({
+      autoclose: true
+    })
+  })
+</script>
 </body>
 </html>
