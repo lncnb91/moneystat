@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "af2b9fedfe2f1f34609b",
-    "url": "/moneystat/static/css/main.4749dc44.chunk.css"
+    "revision": "9cdb990f579abf876269",
+    "url": "/moneystat/static/css/main.8a0fe103.chunk.css"
   },
   {
-    "revision": "af2b9fedfe2f1f34609b",
-    "url": "/moneystat/static/js/main.af2b9fed.chunk.js"
+    "revision": "9cdb990f579abf876269",
+    "url": "/moneystat/static/js/main.9cdb990f.chunk.js"
   },
   {
     "revision": "a4480bdca58ee80deccd",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/moneystat/static/media/logo.5d5d9eef.svg"
   },
   {
-    "revision": "eb709ffde360cc524be26aabd3dfe103",
+    "revision": "9cf325b29ab0b6f3963127e53835bc00",
     "url": "/moneystat/index.html"
   }
 ];
