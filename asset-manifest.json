@@ -1,14 +1,14 @@
 {
-  "main.css": "/moneystat/static/css/main.07318036.chunk.css",
-  "main.js": "/moneystat/static/js/main.01a6bb6a.chunk.js",
-  "main.js.map": "/moneystat/static/js/main.01a6bb6a.chunk.js.map",
+  "main.css": "/moneystat/static/css/main.4749dc44.chunk.css",
+  "main.js": "/moneystat/static/js/main.af2b9fed.chunk.js",
+  "main.js.map": "/moneystat/static/js/main.af2b9fed.chunk.js.map",
   "runtime~main.js": "/moneystat/static/js/runtime~main.a4480bdc.js",
   "runtime~main.js.map": "/moneystat/static/js/runtime~main.a4480bdc.js.map",
   "static/js/2.d16a2668.chunk.js": "/moneystat/static/js/2.d16a2668.chunk.js",
   "static/js/2.d16a2668.chunk.js.map": "/moneystat/static/js/2.d16a2668.chunk.js.map",
   "index.html": "/moneystat/index.html",
-  "precache-manifest.d5b67056d2212f99c0c26eec00dc166e.js": "/moneystat/precache-manifest.d5b67056d2212f99c0c26eec00dc166e.js",
+  "precache-manifest.5ab3c018a6472962988a918e4573ec36.js": "/moneystat/precache-manifest.5ab3c018a6472962988a918e4573ec36.js",
   "service-worker.js": "/moneystat/service-worker.js",
-  "static/css/main.07318036.chunk.css.map": "/moneystat/static/css/main.07318036.chunk.css.map",
+  "static/css/main.4749dc44.chunk.css.map": "/moneystat/static/css/main.4749dc44.chunk.css.map",
   "static/media/logo.svg": "/moneystat/static/media/logo.5d5d9eef.svg"
 }
