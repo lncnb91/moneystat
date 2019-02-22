@@ -62,33 +62,6 @@ $(function () {
     GB: 320, // Great Britain
     RU: 3000 // Russia
   };
-  // World map by jvectormap
-  $('#world-map').vectorMap({
-    map              : 'world_mill_en',
-    backgroundColor  : 'transparent',
-    regionStyle      : {
-      initial: {
-        fill            : '#e4e4e4',
-        'fill-opacity'  : 1,
-        stroke          : 'none',
-        'stroke-width'  : 0,
-        'stroke-opacity': 1
-      }
-    },
-    series           : {
-      regions: [
-        {
-          values           : visitorsData,
-          scale            : ['#92c1dc', '#ebf4f9'],
-          normalizeFunction: 'polynomial'
-        }
-      ]
-    },
-    onRegionLabelShow: function (e, el, code) {
-      if (typeof visitorsData[code] != 'undefined')
-        el.html(el.html() + ': ' + visitorsData[code] + ' new visitors');
-    }
-  });
 
   // Sparkline charts
   var myvalues = [1000, 1200, 920, 927, 931, 1027, 819, 930, 1021];
@@ -177,26 +150,6 @@ $(function () {
     gridTextSize     : 10
   });
 
-  // Donut Chart
-  /*var donut = new Morris.Donut({
-    element  : 'sales-chart',
-    resize   : true,
-    colors   : ['#3c8dbc', '#f56954', '#00a65a'],
-    data     : [
-      { label: 'Download Sales', value: 12 },
-      { label: 'In-Store Sales', value: 30 },
-      { label: 'Mail-Order Sales', value: 20 }
-    ],
-    hideHover: 'auto'
-  });
-
-  // Fix for charts under tabs
-  $('.box ul.nav a').on('shown.bs.tab', function () {
-    area.redraw();
-    donut.redraw();
-    line.redraw();
-  });*/
-
   /* The todo list plugin */
   $('.todo-list').todoList({
     onCheck  : function () {
@@ -206,5 +159,60 @@ $(function () {
       window.console.log($(this), 'The element has been unchecked');
     }
   });
+
+  
+  //Initialize Select2 Elements
+  $('.select2').select2()
+
+  //Date picker
+  $('#datepicker').datepicker({
+    autoclose: true
+  })
+
+  //-------------
+  //- PIE CHART -
+  //-------------
+  // Get context with jQuery - using jQuery's .get() method.
+  var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+  var pieChart       = new Chart(pieChartCanvas)
+  var PieData        = [
+    {
+      value    : 329000,
+      color    : '#f56954',
+      highlight: '#f56954',
+      label    : 'Ngọc Cường'
+    },
+    {
+      value    : 22000000,
+      color    : '#00a65a',
+      highlight: '#00a65a',
+      label    : 'Thu Hường'
+    }
+  ]
+  var pieOptions     = {
+    //Boolean - Whether we should show a stroke on each segment
+    segmentShowStroke    : true,
+    //String - The colour of each segment stroke
+    segmentStrokeColor   : '#fff',
+    //Number - The width of each segment stroke
+    segmentStrokeWidth   : 2,
+    //Number - The percentage of the chart that we cut out of the middle
+    percentageInnerCutout: 50, // This is 0 for Pie charts
+    //Number - Amount of animation steps
+    animationSteps       : 100,
+    //String - Animation easing effect
+    animationEasing      : 'easeOutBounce',
+    //Boolean - Whether we animate the rotation of the Doughnut
+    animateRotate        : true,
+    //Boolean - Whether we animate scaling the Doughnut from the centre
+    animateScale         : false,
+    //Boolean - whether to make the chart responsive to window resizing
+    responsive           : true,
+    // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+    maintainAspectRatio  : true
+  }
+  //Create pie or douhnut chart
+  // You can switch between pie and douhnut using the method below.
+  pieChart.Doughnut(PieData, pieOptions)
 
 });
