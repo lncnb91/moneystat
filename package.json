@@ -4,7 +4,9 @@
   "private": true,
   "homepage": "https://lncnb91.github.io/moneystat",
   "dependencies": {
+    "axios": "^0.18.0",
     "gh-pages": "^2.0.1",
+    "immutability-helper": "^3.0.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-scripts": "2.1.5"
