@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import SmallBox from './SmallBox'
+import SmallBox from './SmallBoxContainer/SmallBox'
 
 class SmallBoxContainer extends Component {
 
