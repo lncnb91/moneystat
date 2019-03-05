@@ -10,7 +10,7 @@
   }
 }
 
-#loading {
+#loader {
   background-color:white;
   position: fixed;
   top: 0;
@@ -22,7 +22,7 @@
   text-align: center
 }
 
-#loading-icon {
+#loader-icon {
   position: relative;
   top: 50%;
 }

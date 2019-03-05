@@ -9,7 +9,8 @@ class Content extends Component {
         <ContentHeader />
 
         <section className="content">
-          <ContentBody />
+          <ContentBody showLoader={this.props.showLoader}
+            hideLoader={this.props.hideLoader} />
         </section>
       </div>
     );

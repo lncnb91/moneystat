@@ -19,10 +19,12 @@ class ContentBody extends Component {
   }
 
   componentDidMount() {
+    this.props.showLoader()
     axios.get('https://moneystat-api.herokuapp.com/api/v1/dashboards.json?wallet_id=1')
     .then(response => {
       const smallBox = update(this.state.smallBox, {$set: response.data.small_box})
       this.setState({smallBox: smallBox})
+      this.props.hideLoader()
     })
     .catch(error => console.log(error))
   }
