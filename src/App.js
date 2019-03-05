@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import axios from 'axios'
+import update from 'immutability-helper'
+import './App.css'
 import Header from './components/Header'
 import MainSideBar from './components/MainSideBar'
 import Content from './components/Content'
@@ -11,8 +13,36 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      loading: "none"
+      loading: "none",
+      smallBox: {
+        budget: 0,
+        total_spent: 0,
+        wallet_balance: 0,
+        last_month_spent: 0
+      },
+      spendingByUser: [],
+      detailedBudget: [],
+      spentExpenses: []
     }
+  }
+
+  componentDidMount() {
+    this.showLoader()
+    axios.get('https://moneystat-api.herokuapp.com/api/v1/dashboards.json?wallet_id=1')
+    .then(response => {
+      const smallBox = update(this.state.smallBox, {$set: response.data.small_box})
+      const spendingByUser = update(this.state.spendingByUser, { $splice: [[0, 0, response.data.spending_by_user]]})
+      const detailedBudget = update(this.state.detailedBudget, { $splice: [[0, 0, response.data.detailed_budget]]})
+      const spentExpenses = update(this.state.spentExpenses, { $splice: [[0, 0, response.data.spent_expenses]]})
+      this.setState({
+        smallBox: smallBox,
+        spendingByUser: spendingByUser,
+        detailedBudget: detailedBudget,
+        spentExpense: spentExpenses
+      })
+      this.hideLoader()
+    })
+    .catch(error => console.log(error))
   }
 
   showLoader = () => {
@@ -33,7 +63,11 @@ class App extends Component {
         <MainSideBar />
 
         <Content showLoader={this.showLoader}
-          hideLoader={this.hideLoader} />
+          hideLoader={this.hideLoader}
+          smallBox={this.state.smallBox}
+          spendingByUser={this.state.spendingByUser}
+          detailedBudget={this.state.detailedBudget}
+          spentExpense={this.state.spentExpense} />
 
         <Footer />
 
