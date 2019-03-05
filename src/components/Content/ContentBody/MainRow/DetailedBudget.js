@@ -1,6 +1,23 @@
 import React, { Component } from 'react'
+import update from 'immutability-helper'
 
 class DetailedBudget extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      detailedBudgets: []
+    }
+  }
+
+  componentDidUpdate() {
+    const detailedBudgets = update(this.state.detailedBudgets, { $splice: [[0, 0, this.props.detailedBudgets[0]]]})
+    this.setState({detailedBudgets: detailedBudgets})
+  }
+
+  formatNumber = (num) => {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.') 
+  }
+
   render() {
     return (
       <div className="box">
@@ -40,6 +57,9 @@ class DetailedBudget extends Component {
                 <td>0<sup>đ</sup></td>
                 <td>2.000.000<sup>đ</sup></td>
               </tr>
+              {this.state.detailedBudgets.map((budget) => {
+                console.log("test")
+              })}
             </tbody>
           </table>
         </div>

@@ -21,7 +21,7 @@ class App extends Component {
         last_month_spent: 0
       },
       spendingByUser: [],
-      detailedBudget: [],
+      detailedBudgets: [],
       spentExpenses: []
     }
   }
@@ -32,14 +32,16 @@ class App extends Component {
     .then(response => {
       const smallBox = update(this.state.smallBox, {$set: response.data.small_box})
       const spendingByUser = update(this.state.spendingByUser, { $splice: [[0, 0, response.data.spending_by_user]]})
-      const detailedBudget = update(this.state.detailedBudget, { $splice: [[0, 0, response.data.detailed_budget]]})
+      const detailedBudgets = update(this.state.detailedBudgets, { $splice: [[0, 0, response.data.detailed_budgets]]})
       const spentExpenses = update(this.state.spentExpenses, { $splice: [[0, 0, response.data.spent_expenses]]})
       this.setState({
         smallBox: smallBox,
         spendingByUser: spendingByUser,
-        detailedBudget: detailedBudget,
+        detailedBudgets: detailedBudgets,
         spentExpense: spentExpenses
       })
+      console.log("Response returned")
+      console.log(response.data.detailed_budgets)
       this.hideLoader()
     })
     .catch(error => console.log(error))
@@ -66,7 +68,7 @@ class App extends Component {
           hideLoader={this.hideLoader}
           smallBox={this.state.smallBox}
           spendingByUser={this.state.spendingByUser}
-          detailedBudget={this.state.detailedBudget}
+          detailedBudgets={this.state.detailedBudgets}
           spentExpense={this.state.spentExpense} />
 
         <Footer />
@@ -79,4 +81,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App

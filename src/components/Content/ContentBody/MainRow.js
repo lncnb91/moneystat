@@ -11,13 +11,18 @@ class MainRow extends Component {
       <div className="row">
         <section className="col-lg-9 connectedSortable">
 
-          <DetailedBudget />
+          <DetailedBudget howLoader={this.props.showLoader}
+            hideLoader={this.props.hideLoader}
+            detailedBudgets={this.props.detailedBudgets} />
 
-          <SpentExpense />
+          <SpentExpense howLoader={this.props.showLoader}
+            hideLoader={this.props.hideLoader}
+            spentExpense={this.props.spentExpense} />
+
         </section>
 
         <section className="col-lg-3 connectedSortable">
-          <SpendingByUserChart />
+          <SpendingByUserChart spendingByUser={this.props.spendingByUser} />
 
           <MonthlySpendingChart />
 

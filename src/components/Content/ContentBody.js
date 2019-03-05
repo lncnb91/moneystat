@@ -25,7 +25,11 @@ class ContentBody extends Component {
           total_spent={this.props.smallBox.total_spent}
           wallet_balance={this.props.smallBox.wallet_balance} 
           last_month_spent={this.props.smallBox.last_month_spent} />
-        <MainRow />
+        <MainRow showLoader={this.props.showLoader}
+          hideLoader={this.props.hideLoader}
+          spendingByUser={this.props.spendingByUser}
+          detailedBudgets={this.props.detailedBudgets}
+          spentExpense={this.props.spentExpense} />
       </div>
     );
   }
