@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import EntryInputModal from './SpentExpense/EntryInputModal'
+import SpentExpenseRow from './SpentExpense/SpentExpenseRow'
 
 class SpentExpense extends Component {
   render() {
@@ -8,7 +9,7 @@ class SpentExpense extends Component {
         <div className="box-header">
           <h3 className="box-title">Spent expenses</h3>
 
-          <div className="box-tools">
+          <div className="box-tools pull-right">
             <div className="input-group input-group-sm" style={{width: "150px"}}>
               <input type="text" name="table_search" className="form-control pull-right" placeholder="Search" />
 
@@ -28,34 +29,13 @@ class SpentExpense extends Component {
                 <th>Amount</th>
                 <th>Description</th>
               </tr>
-              <tr>
-                <td>Ngọc Cường</td>
-                <td>20-2-2019</td>
-                <td>Food & Drink</td>
-                <td>30.000<sup>đ</sup></td>
-                <td>Ăn bún bò giò ốc tại Keang Nam</td>
-              </tr>
-              <tr>
-                <td>Thu Hường</td>
-                <td>20-2-2019</td>
-                <td>Insurances</td>
-                <td>2.000.000<sup>đ</sup></td>
-                <td>Đóng bảo hiểm tháng 2 cho Hường và Cún</td>
-              </tr>
-              <tr>
-                <td>Ngọc Cường</td>
-                <td>20-2-2019</td>
-                <td>Family</td>
-                <td>299.000<sup>đ</sup></td>
-                <td>Mua quà đầy 2 tháng tuổi cho cò</td>
-              </tr>
-              <tr>
-                <td>Thu Hường</td>
-                <td>19-1-2019</td>
-                <td>Family</td>
-                <td>20.000.000<sup>đ</sup></td>
-                <td>Tặng bố chồng 20 củ tiêu tết</td>
-              </tr>
+              {this.props.spentExpenses.map((expense) => {
+                return(
+                  <SpentExpenseRow expense={expense}
+                    key={expense.id}
+                    formatNumber={this.props.formatNumber}/>
+                )
+              })}
             </tbody>
           </table>
         </div>

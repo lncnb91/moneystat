@@ -31,17 +31,12 @@ class App extends Component {
     axios.get('https://moneystat-api.herokuapp.com/api/v1/dashboards.json?wallet_id=1')
     .then(response => {
       const smallBox = update(this.state.smallBox, {$set: response.data.small_box})
-      const spendingByUser = update(this.state.spendingByUser, { $splice: [[0, 0, response.data.spending_by_user]]})
-      const detailedBudgets = update(this.state.detailedBudgets, { $splice: [[0, 0, response.data.detailed_budgets]]})
-      const spentExpenses = update(this.state.spentExpenses, { $splice: [[0, 0, response.data.spent_expenses]]})
       this.setState({
         smallBox: smallBox,
-        spendingByUser: spendingByUser,
-        detailedBudgets: detailedBudgets,
-        spentExpense: spentExpenses
+        spendingByUser: response.data.spending_by_user,
+        detailedBudgets: response.data.detailed_budgets,
+        spentExpenses: response.data.spent_expenses
       })
-      console.log("Response returned")
-      console.log(response.data.detailed_budgets)
       this.hideLoader()
     })
     .catch(error => console.log(error))
@@ -55,6 +50,10 @@ class App extends Component {
     this.setState({loading: "none"})
   }
 
+  formatNumber = (num) => {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.') 
+  }
+
   render() {
     return (
       <div className="wrapper">
@@ -66,10 +65,11 @@ class App extends Component {
 
         <Content showLoader={this.showLoader}
           hideLoader={this.hideLoader}
+          formatNumber={this.formatNumber}
           smallBox={this.state.smallBox}
           spendingByUser={this.state.spendingByUser}
           detailedBudgets={this.state.detailedBudgets}
-          spentExpense={this.state.spentExpense} />
+          spentExpenses={this.state.spentExpenses} />
 
         <Footer />
 

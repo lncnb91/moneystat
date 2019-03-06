@@ -27,9 +27,10 @@ class ContentBody extends Component {
           last_month_spent={this.props.smallBox.last_month_spent} />
         <MainRow showLoader={this.props.showLoader}
           hideLoader={this.props.hideLoader}
+          formatNumber={this.props.formatNumber}
           spendingByUser={this.props.spendingByUser}
           detailedBudgets={this.props.detailedBudgets}
-          spentExpense={this.props.spentExpense} />
+          spentExpenses={this.props.spentExpenses} />
       </div>
     );
   }

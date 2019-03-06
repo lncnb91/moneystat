@@ -11,13 +11,15 @@ class MainRow extends Component {
       <div className="row">
         <section className="col-lg-9 connectedSortable">
 
-          <DetailedBudget howLoader={this.props.showLoader}
+          <DetailedBudget showLoader={this.props.showLoader}
             hideLoader={this.props.hideLoader}
+            formatNumber={this.props.formatNumber}
             detailedBudgets={this.props.detailedBudgets} />
 
-          <SpentExpense howLoader={this.props.showLoader}
+          <SpentExpense showLoader={this.props.showLoader}
             hideLoader={this.props.hideLoader}
-            spentExpense={this.props.spentExpense} />
+            spentExpenses={this.props.spentExpenses}
+            formatNumber={this.props.formatNumber} />
 
         </section>
 
