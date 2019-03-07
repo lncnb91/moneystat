@@ -9,14 +9,14 @@ class Header extends Component {
           <span className="logo-lg">MoneyManager</span>
         </a>
         <nav className="navbar navbar-static-top">
-          <a href="#" className="sidebar-toggle" data-toggle="push-menu" role="button">
+          <a href="_blank" className="sidebar-toggle" data-toggle="push-menu" role="button">
             <span className="sr-only">Toggle navigation</span>
           </a>
 
           <div className="navbar-custom-menu">
             <ul className="nav navbar-nav">
               <li className="dropdown messages-menu">
-                <a href="#" className="dropdown-toggle" data-toggle="dropdown">
+                <a href="_blank" className="dropdown-toggle" data-toggle="dropdown">
                   <i className="fa fa-envelope-o"></i>
                   <span className="label label-success">4</span>
                 </a>
@@ -25,9 +25,9 @@ class Header extends Component {
                   <li>
                     <ul className="menu">
                       <li>
-                        <a href="#">
+                        <a href="_blank">
                           <div className="pull-left">
-                            <img src="./dist/img/user2-160x160.jpg" className="img-circle" alt="User Image" />
+                            <img src="./dist/img/user2-160x160.jpg" className="img-circle" alt="User" />
                           </div>
                           <h4>
                             Support Team
@@ -37,9 +37,9 @@ class Header extends Component {
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="_blank">
                           <div className="pull-left">
-                            <img src="./dist/img/user3-128x128.jpg" className="img-circle" alt="User Image" />
+                            <img src="./dist/img/user3-128x128.jpg" className="img-circle" alt="User" />
                           </div>
                           <h4>
                             AdminLTE Design Team
@@ -49,9 +49,9 @@ class Header extends Component {
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="_blank">
                           <div className="pull-left">
-                            <img src="./dist/img/user4-128x128.jpg" className="img-circle" alt="User Image" />
+                            <img src="./dist/img/user4-128x128.jpg" className="img-circle" alt="User" />
                           </div>
                           <h4>
                             Developers
@@ -61,9 +61,9 @@ class Header extends Component {
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="_blank">
                           <div className="pull-left">
-                            <img src="./dist/img/user3-128x128.jpg" className="img-circle" alt="User Image" />
+                            <img src="./dist/img/user3-128x128.jpg" className="img-circle" alt="User" />
                           </div>
                           <h4>
                             Sales Department
@@ -73,9 +73,9 @@ class Header extends Component {
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="_blank">
                           <div className="pull-left">
-                            <img src="./dist/img/user4-128x128.jpg" className="img-circle" alt="User Image" />
+                            <img src="./dist/img/user4-128x128.jpg" className="img-circle" alt="User" />
                           </div>
                           <h4>
                             Reviewers
@@ -86,11 +86,11 @@ class Header extends Component {
                       </li>
                     </ul>
                   </li>
-                  <li className="footer"><a href="#">See All Messages</a></li>
+                  <li className="footer"><a href="_blank">See All Messages</a></li>
                 </ul>
               </li>
               <li className="dropdown notifications-menu">
-                <a href="#" className="dropdown-toggle" data-toggle="dropdown">
+                <a href="_blank" className="dropdown-toggle" data-toggle="dropdown">
                   <i className="fa fa-bell-o"></i>
                   <span className="label label-warning">10</span>
                 </a>
@@ -99,38 +99,38 @@ class Header extends Component {
                   <li>
                     <ul className="menu">
                       <li>
-                        <a href="#">
+                        <a href="_blank">
                           <i className="fa fa-users text-aqua"></i> 5 new members joined today
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="_blank">
                           <i className="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
                           page and may cause design problems
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="_blank">
                           <i className="fa fa-users text-red"></i> 5 new members joined
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="_blank">
                           <i className="fa fa-shopping-cart text-green"></i> 25 sales made
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="_blank">
                           <i className="fa fa-user text-red"></i> You changed your username
                         </a>
                       </li>
                     </ul>
                   </li>
-                  <li className="footer"><a href="#">View all</a></li>
+                  <li className="footer"><a href="_blank">View all</a></li>
                 </ul>
               </li>
               <li className="dropdown tasks-menu">
-                <a href="#" className="dropdown-toggle" data-toggle="dropdown">
+                <a href="_blank" className="dropdown-toggle" data-toggle="dropdown">
                   <i className="fa fa-flag-o"></i>
                   <span className="label label-danger">9</span>
                 </a>
@@ -139,7 +139,7 @@ class Header extends Component {
                   <li>
                     <ul className="menu">
                       <li>
-                        <a href="#">
+                        <a href="_blank">
                           <h3>
                             Design some buttons
                             <small className="pull-right">20%</small>
@@ -153,7 +153,7 @@ class Header extends Component {
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="_blank">
                           <h3>
                             Create a nice theme
                             <small className="pull-right">40%</small>
@@ -167,7 +167,7 @@ class Header extends Component {
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="_blank">
                           <h3>
                             Some task I need to do
                             <small className="pull-right">60%</small>
@@ -181,7 +181,7 @@ class Header extends Component {
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="_blank">
                           <h3>
                             Make beautiful transitions
                             <small className="pull-right">80%</small>
@@ -197,18 +197,18 @@ class Header extends Component {
                     </ul>
                   </li>
                   <li className="footer">
-                    <a href="#">View all tasks</a>
+                    <a href="_blank">View all tasks</a>
                   </li>
                 </ul>
               </li>
               <li className="dropdown user user-menu">
-                <a href="#" className="dropdown-toggle" data-toggle="dropdown">
-                  <img src="./dist/img/my-profile-pic.jpg" className="user-image" alt="User Image" />
+                <a href="_blank" className="dropdown-toggle" data-toggle="dropdown">
+                  <img src="./dist/img/my-profile-pic.jpg" className="user-image" alt="User" />
                   <span className="hidden-xs">Lê Ngọc Cường</span>
                 </a>
                 <ul className="dropdown-menu">
                   <li className="user-header">
-                    <img src="./dist/img/user2-160x160.jpg" className="img-circle" alt="User Image" />
+                    <img src="./dist/img/user2-160x160.jpg" className="img-circle" alt="User" />
 
                     <p>
                       Alexander Pierce - Web Developer
@@ -218,28 +218,28 @@ class Header extends Component {
                   <li className="user-body">
                     <div className="row">
                       <div className="col-xs-4 text-center">
-                        <a href="#">Followers</a>
+                        <a href="_blank">Followers</a>
                       </div>
                       <div className="col-xs-4 text-center">
-                        <a href="#">Sales</a>
+                        <a href="_blank">Sales</a>
                       </div>
                       <div className="col-xs-4 text-center">
-                        <a href="#">Friends</a>
+                        <a href="_blank">Friends</a>
                       </div>
                     </div>
                   </li>
                   <li className="user-footer">
                     <div className="pull-left">
-                      <a href="#" className="btn btn-default btn-flat">Profile</a>
+                      <a href="_blank" className="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div className="pull-right">
-                      <a href="#" className="btn btn-default btn-flat">Sign out</a>
+                      <a href="_blank" className="btn btn-default btn-flat">Sign out</a>
                     </div>
                   </li>
                 </ul>
               </li>
               <li>
-                <a href="#" data-toggle="control-sidebar"><i className="fa fa-gears"></i></a>
+                <a href="_blank" data-toggle="control-sidebar"><i className="fa fa-gears"></i></a>
               </li>
             </ul>
           </div>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import update from 'immutability-helper'
 import DetailedBudgetRow from './DetailedBudget/DetailedBudgetRow'
 
 class DetailedBudget extends Component {

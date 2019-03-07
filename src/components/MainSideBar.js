@@ -8,11 +8,11 @@ class MainSideBar extends Component {
           <section className="sidebar">
             <div className="user-panel">
               <div className="pull-left image">
-                <img src="./dist/img/my-profile-pic.jpg" className="img-circle" alt="User Image" />
+                <img src="./dist/img/my-profile-pic.jpg" className="img-circle" alt="User" />
               </div>
               <div className="pull-left info">
                 <p>Lê Ngọc Cường</p>
-                <a href="#"><i className="fa fa-circle text-success"></i> Online</a>
+                <a href="_blank"><i className="fa fa-circle text-success"></i> Online</a>
               </div>
             </div>
             <form action="#" method="get" className="sidebar-form">
@@ -27,7 +27,7 @@ class MainSideBar extends Component {
             <ul className="sidebar-menu" data-widget="tree">
               <li className="header">MAIN NAVIGATION</li>
               <li className="active treeview">
-                <a href="#">
+                <a href="_blank">
                   <i className="fa fa-dashboard"></i> <span>Dashboard</span>
                   <span className="pull-right-container">
                     <i className="fa fa-angle-left pull-right"></i>
@@ -39,7 +39,7 @@ class MainSideBar extends Component {
                 </ul>
               </li>
               <li className="treeview">
-                <a href="#">
+                <a href="_blank">
                   <i className="fa fa-files-o"></i>
                   <span>Layout Options</span>
                   <span className="pull-right-container">
@@ -62,7 +62,7 @@ class MainSideBar extends Component {
                 </a>
               </li>
               <li className="treeview">
-                <a href="#">
+                <a href="_blank">
                   <i className="fa fa-pie-chart"></i>
                   <span>Charts</span>
                   <span className="pull-right-container">
@@ -77,7 +77,7 @@ class MainSideBar extends Component {
                 </ul>
               </li>
               <li className="treeview">
-                <a href="#">
+                <a href="_blank">
                   <i className="fa fa-laptop"></i>
                   <span>UI Elements</span>
                   <span className="pull-right-container">
@@ -94,7 +94,7 @@ class MainSideBar extends Component {
                 </ul>
               </li>
               <li className="treeview">
-                <a href="#">
+                <a href="_blank">
                   <i className="fa fa-edit"></i> <span>Forms</span>
                   <span className="pull-right-container">
                     <i className="fa fa-angle-left pull-right"></i>
@@ -107,7 +107,7 @@ class MainSideBar extends Component {
                 </ul>
               </li>
               <li className="treeview">
-                <a href="#">
+                <a href="_blank">
                   <i className="fa fa-table"></i> <span>Tables</span>
                   <span className="pull-right-container">
                     <i className="fa fa-angle-left pull-right"></i>
@@ -138,7 +138,7 @@ class MainSideBar extends Component {
                 </a>
               </li>
               <li className="treeview">
-                <a href="#">
+                <a href="_blank">
                   <i className="fa fa-folder"></i> <span>Examples</span>
                   <span className="pull-right-container">
                     <i className="fa fa-angle-left pull-right"></i>
@@ -157,43 +157,43 @@ class MainSideBar extends Component {
                 </ul>
               </li>
               <li className="treeview">
-                <a href="#">
+                <a href="_blank">
                   <i className="fa fa-share"></i> <span>Multilevel</span>
                   <span className="pull-right-container">
                     <i className="fa fa-angle-left pull-right"></i>
                   </span>
                 </a>
                 <ul className="treeview-menu">
-                  <li><a href="#"><i className="fa fa-circle-o"></i> Level One</a></li>
+                  <li><a href="_blank"><i className="fa fa-circle-o"></i> Level One</a></li>
                   <li className="treeview">
-                    <a href="#"><i className="fa fa-circle-o"></i> Level One
+                    <a href="_blank"><i className="fa fa-circle-o"></i> Level One
                       <span className="pull-right-container">
                         <i className="fa fa-angle-left pull-right"></i>
                       </span>
                     </a>
                     <ul className="treeview-menu">
-                      <li><a href="#"><i className="fa fa-circle-o"></i> Level Two</a></li>
+                      <li><a href="_blank"><i className="fa fa-circle-o"></i> Level Two</a></li>
                       <li className="treeview">
-                        <a href="#"><i className="fa fa-circle-o"></i> Level Two
+                        <a href="_blank"><i className="fa fa-circle-o"></i> Level Two
                           <span className="pull-right-container">
                             <i className="fa fa-angle-left pull-right"></i>
                           </span>
                         </a>
                         <ul className="treeview-menu">
-                          <li><a href="#"><i className="fa fa-circle-o"></i> Level Three</a></li>
-                          <li><a href="#"><i className="fa fa-circle-o"></i> Level Three</a></li>
+                          <li><a href="_blank"><i className="fa fa-circle-o"></i> Level Three</a></li>
+                          <li><a href="_blank"><i className="fa fa-circle-o"></i> Level Three</a></li>
                         </ul>
                       </li>
                     </ul>
                   </li>
-                  <li><a href="#"><i className="fa fa-circle-o"></i> Level One</a></li>
+                  <li><a href="_blank"><i className="fa fa-circle-o"></i> Level One</a></li>
                 </ul>
               </li>
               <li><a href="https://adminlte.io/docs"><i className="fa fa-book"></i> <span>Documentation</span></a></li>
               <li className="header">LABELS</li>
-              <li><a href="#"><i className="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-              <li><a href="#"><i className="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-              <li><a href="#"><i className="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+              <li><a href="_blank"><i className="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
+              <li><a href="_blank"><i className="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
+              <li><a href="_blank"><i className="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
             </ul>
           </section>
         </aside>

@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios'
-import update from 'immutability-helper'
 import SmallBoxContainer from './ContentBody/SmallBoxContainer'
 import MainRow from './ContentBody/MainRow'
 

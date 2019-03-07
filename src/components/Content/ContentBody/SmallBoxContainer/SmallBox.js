@@ -13,7 +13,7 @@ class SmallBox extends Component {
           <div className="icon">
             <i className={`ion ${this.props.iconClass}`}></i>
           </div>
-          <a href="#" className="small-box-footer">More info <i className="fa fa-arrow-circle-right"></i></a>
+          <a href="_blank" className="small-box-footer">More info <i className="fa fa-arrow-circle-right"></i></a>
         </div>
       </div>
     );
