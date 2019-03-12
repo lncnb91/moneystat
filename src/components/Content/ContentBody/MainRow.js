@@ -18,8 +18,9 @@ class MainRow extends Component {
 
           <SpentExpense showLoader={this.props.showLoader}
             hideLoader={this.props.hideLoader}
-            spentExpenses={this.props.spentExpenses}
-            formatNumber={this.props.formatNumber} />
+            transactions={this.props.transactions}
+            formatNumber={this.props.formatNumber}
+            addNewEntry={this.addNewEntry} />
 
         </section>
 

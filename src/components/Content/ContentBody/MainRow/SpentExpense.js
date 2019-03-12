@@ -29,10 +29,10 @@ class SpentExpense extends Component {
                 <th>Amount</th>
                 <th>Description</th>
               </tr>
-              {this.props.spentExpenses.map((expense) => {
+              {this.props.transactions.map((transaction) => {
                 return(
-                  <SpentExpenseRow expense={expense}
-                    key={expense.id}
+                  <SpentExpenseRow transaction={transaction}
+                    key={transaction.id}
                     formatNumber={this.props.formatNumber}/>
                 )
               })}
@@ -44,7 +44,7 @@ class SpentExpense extends Component {
             Add item
           </button>
         </div>
-        <EntryInputModal />
+        <EntryInputModal addNewEntry={this.addNewEntry} />
       </div>
     );
   }

@@ -22,7 +22,7 @@ class App extends Component {
       },
       spendingByUser: [],
       detailedBudgets: [],
-      spentExpenses: [],
+      transactions: [],
       monthlySpending: []
     }
   }
@@ -36,7 +36,7 @@ class App extends Component {
         smallBox: smallBox,
         spendingByUser: response.data.spending_by_user,
         detailedBudgets: response.data.detailed_budgets,
-        spentExpenses: response.data.spent_expenses,
+        transactions: response.data.spent_expenses,
         monthlySpending: response.data.monthly_spending
       })
       this.hideLoader()
@@ -56,6 +56,17 @@ class App extends Component {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.') 
   }
 
+  addNewEntry = (entry) => {
+    this.showLoading()
+    axios.post('http://localhost:3001/api/v1/entries', entry)
+    .then(response => {
+      const transactions = update(this.state.transactions, { $splice: [[0, 0, response.data.spent_expenses]]})
+      this.setState({transactions: transactions})
+      this.hideLoading()
+    })
+    .catch(error => console.log(error))
+  }
+
   render() {
     return (
       <div className="wrapper">
@@ -71,8 +82,9 @@ class App extends Component {
           smallBox={this.state.smallBox}
           spendingByUser={this.state.spendingByUser}
           detailedBudgets={this.state.detailedBudgets}
-          spentExpenses={this.state.spentExpenses}
-          monthlySpending={this.state.monthlySpending} />
+          transactions={this.state.transactions}
+          monthlySpending={this.state.monthlySpending}
+          addNewEntry={this.addNewEntry} />
         <Footer />
 
         <ControlSideBar />

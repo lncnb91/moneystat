@@ -4,11 +4,11 @@ class SpentExpenseRow extends Component {
   render() {
     return (
       <tr>
-        <td>{this.props.expense.user}</td>
-        <td>{this.props.expense.date}</td>
-        <td>{this.props.expense.category}</td>
-        <td>{this.props.formatNumber(this.props.expense.amount)}<sup>đ</sup></td>
-        <td>{this.props.expense.description}</td>
+        <td>{this.props.transaction.user}</td>
+        <td>{this.props.transaction.date}</td>
+        <td>{this.props.transaction.category}</td>
+        <td>{this.props.formatNumber(this.props.transaction.amount)}<sup>đ</sup></td>
+        <td>{this.props.transaction.description}</td>
       </tr>
     )
   }
