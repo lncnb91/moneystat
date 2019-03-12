@@ -16,7 +16,8 @@ class Content extends Component {
             smallBox={this.props.smallBox}
             spendingByUser={this.props.spendingByUser}
             detailedBudgets={this.props.detailedBudgets}
-            spentExpenses={this.props.spentExpenses} />
+            spentExpenses={this.props.spentExpenses}
+            monthlySpending={this.props.monthlySpending} />
         </section>
       </div>
     );

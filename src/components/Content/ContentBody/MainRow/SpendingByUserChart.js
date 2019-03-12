@@ -1,11 +1,27 @@
 import React, { Component } from 'react'
-import { Pie } from 'react-chartjs'
+import { Pie } from 'react-chartjs-2'
 
 class SpendingByUserChart extends Component {
-  convertResponseData = (response) => {
-    return response.map(user => ({label: user.user_name, value: user.spent_amount}));
-  }
 
+  convertResponseData = (response) => {
+    const label = response.map(user => (user.user_name));
+    const data = response.map(user => (user.spent_amount));
+    return {
+      labels: label,
+      datasets: [
+        {
+          label: "Spending By User",
+          data: data,
+          backgroundColor:[
+            '#00AED9',
+            '#019752',
+            '#FF6384',
+            '#DD4A39'
+          ]
+        }
+      ]
+    }
+  }
   
   render(){
     return(
@@ -20,14 +36,11 @@ class SpendingByUserChart extends Component {
           </div>
         </div>
         <div className="box-body" style={{textAlign: "center"}}>
-          <Pie
-            data={this.convertResponseData(this.props.spendingByUser)}
-          />
+          <Pie data={this.convertResponseData(this.props.spendingByUser)} />
         </div>
       </div>
     );
   }
 }
-
 
 export default SpendingByUserChart

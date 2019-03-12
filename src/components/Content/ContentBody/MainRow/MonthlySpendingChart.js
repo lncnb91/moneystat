@@ -1,6 +1,37 @@
 import React, { Component } from 'react'
+import { Line } from 'react-chartjs-2'
+
+var options = {
+  legend: 
+  {
+    display: false,
+  }
+}
 
 class MonthlySpendingChart extends Component {
+
+  convertResponseData = (response) => {
+    const label = response.map(user => (user.month));
+    const data = response.map(user => (user.total_expense));
+    return {
+      labels: label,
+      datasets: [
+        {
+          fill: false,
+          lineTension: 0.1,
+          borderColor: 'white',
+          pointBackgroundColor: 'white',
+          pointBorderWidth: 1,
+          pointHoverRadius: 5,
+          pointHoverBorderWidth: 2,
+          pointRadius: 1,
+          pointHitRadius: 10,
+          data: data
+        }
+      ]
+    }
+  }
+
   render() {
     return (
       <div className="box box-solid bg-teal-gradient">
@@ -17,7 +48,8 @@ class MonthlySpendingChart extends Component {
           </div>
         </div>
         <div className="box-body border-radius-none">
-          <div className="chart" id="line-chart" style={{height: "250px"}}></div>
+          <Line data={this.convertResponseData(this.props.monthlySpending)}
+            options = {options} />
         </div>
       </div>
     );

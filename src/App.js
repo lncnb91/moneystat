@@ -22,20 +22,22 @@ class App extends Component {
       },
       spendingByUser: [],
       detailedBudgets: [],
-      spentExpenses: []
+      spentExpenses: [],
+      monthlySpending: []
     }
   }
 
   componentDidMount() {
     this.showLoader()
-    axios.get('https://moneystat-api.herokuapp.com/api/v1/dashboards.json?wallet_id=1')
+    axios.get('http://localhost:3001/api/v1/dashboards.json?wallet_id=1')
     .then(response => {
       const smallBox = update(this.state.smallBox, {$set: response.data.small_box})
       this.setState({
         smallBox: smallBox,
         spendingByUser: response.data.spending_by_user,
         detailedBudgets: response.data.detailed_budgets,
-        spentExpenses: response.data.spent_expenses
+        spentExpenses: response.data.spent_expenses,
+        monthlySpending: response.data.monthly_spending
       })
       this.hideLoader()
     })
@@ -69,8 +71,8 @@ class App extends Component {
           smallBox={this.state.smallBox}
           spendingByUser={this.state.spendingByUser}
           detailedBudgets={this.state.detailedBudgets}
-          spentExpenses={this.state.spentExpenses} />
-
+          spentExpenses={this.state.spentExpenses}
+          monthlySpending={this.state.monthlySpending} />
         <Footer />
 
         <ControlSideBar />

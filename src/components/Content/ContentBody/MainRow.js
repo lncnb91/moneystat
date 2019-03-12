@@ -26,13 +26,13 @@ class MainRow extends Component {
         <section className="col-lg-3 connectedSortable">
           <SpendingByUserChart spendingByUser={this.props.spendingByUser} />
 
-          <MonthlySpendingChart />
+          <MonthlySpendingChart monthlySpending={this.props.monthlySpending} />
 
           <Calendar />
 
         </section>
       </div>
-    );
+    )
   }
 }
 

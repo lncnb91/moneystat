@@ -28,7 +28,8 @@ class ContentBody extends Component {
           formatNumber={this.props.formatNumber}
           spendingByUser={this.props.spendingByUser}
           detailedBudgets={this.props.detailedBudgets}
-          spentExpenses={this.props.spentExpenses} />
+          spentExpenses={this.props.spentExpenses}
+          monthlySpending={this.props.monthlySpending} />
       </div>
     );
   }
